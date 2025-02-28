@@ -30,6 +30,7 @@ sp = spotipy.Spotify(
     )
 )
 
+# Mike's RWH and friends playlist
 rwh_uri = "spotify:playlist:73vmEitV1vfKQK25m1uCp5"
 results = sp.playlist_tracks(rwh_uri)
 tracks = []
@@ -49,8 +50,8 @@ if tracks:
         album_name = track_info["album"]["name"]
         artist_name = track_info["artists"][0]["name"]
         print(f"{num}. Track name: {track_name}")
-        # print(f"Album name: {album_name}")
-        # print(f"Artist name: {artist_name}\n")
+        print(f"Album name: {album_name}")
+        print(f"Artist name: {artist_name}\n")
         num += 1
 else:
     print("No results found.")
